@@ -25,9 +25,6 @@ gem 'jquery-rails'
 # Pagination
 gem 'kaminari'
 
-# For BDD
-gem 'cucumber'
-
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -42,3 +39,14 @@ gem 'capistrano'
 
 # To use debugger
 gem 'debugger'
+
+# For testing under development environment
+group :test, :development do
+  gem 'rspec-rails', '~> 2.5'
+end
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
