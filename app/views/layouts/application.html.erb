@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ticketee</title>
+  <title><%= (@title ? "#{@title} - " : "") + params[:controller].capitalize + " - Ticketee" %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<!-- each flash notice / alert would have its own div to display-->
+<% flash.each do |key, value| %>
+    <div class="flash" id="<%= key %>">
+        <%= value %>
+    </div>
+<% end %>
 
 <%= yield %>
 
