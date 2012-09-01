@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_filter :find_project, :only => [:show, :edit, :update, :destroy]
+
   def index
     @projects = Project.all
   end
@@ -13,7 +15,7 @@ class ProjectsController < ApplicationController
     #flash[:notice] = "Project has been created."
     #redirect_to @project
     #The code above can be shortened as:
-      redirect_to @project, notice: "Project has been created."
+      redirect_to @project, :notice => "Project has been created."
     else
       flash[:alert] = "Project has not been created."
       render action: "new"
@@ -21,17 +23,17 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+
   end
 
+
   def edit
-    @project = Project.find(params[:id])
+
   end
 
   def update
-    @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      redirect_to @project, notice: "Project has been updated."
+      redirect_to @project, :notice => "Project has been updated."
     else
       flash[:alert] = "Project has not been updated."
       render action: 'edit'
@@ -39,12 +41,20 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:id])
     if @project.delete
       redirect_to projects_path, notice: "Project has been deleted."
     else
       flash[:alert] = "Project has not been deleted."
       render action: 'show'
+    end
+  end
+
+  private
+  def find_project
+    begin
+      @project = Project.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to projects_path, :alert => "The project you were looking for could not be found."
     end
   end
 end
