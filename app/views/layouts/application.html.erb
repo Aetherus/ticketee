@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<h1><%= link_to "Ticketee", root_path %></h1>
 <!-- each flash notice / alert would have its own div to display-->
 <% flash.each do |key, value| %>
     <div class="flash" id="<%= key %>">
