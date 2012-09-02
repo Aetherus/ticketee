@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    if @project.delete
+    if @project.destroy
       redirect_to projects_path, notice: "Project has been deleted."
     else
       flash[:alert] = "Project has not been deleted."

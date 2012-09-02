@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /^the project page for "([^"]*)"$/
+    when /^the project page (?:for|of) "([^"]*)"$/
       project_path(Project.find_by_name!($1))
 
     # Add more mappings here.
