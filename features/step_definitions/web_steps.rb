@@ -41,7 +41,7 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
 
-Given /^(?:|I )am on (.+)$/ do |page_name|
+Given /^(?:|I |he )(?:am|is) on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
@@ -102,7 +102,7 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
 end
 
-Then /^(?:|I )should see "([^"]*)"$/ do |text|
+Then /^(?:|I |he )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
   else
@@ -110,7 +110,7 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
   end
 end
 
-Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
+Then /^(?:|I |he )should see \/([^\/]*)\/$/ do |regexp|
   regexp = Regexp.new(regexp)
 
   if page.respond_to? :should

@@ -57,4 +57,5 @@ group :test do
   gem 'database_cleaner'
   gem 'cucumber-rails-training-wheels'
   gem 'factory_girl_rails'
+  gem 'email_spec'
 end
