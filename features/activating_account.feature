@@ -4,7 +4,7 @@ Feature: Activating account
   I want to be able to activate my account
 
   Scenario: Activating via confirmation
-    Given there is following user:
+    Given there is a following user:
       | email               | password  |
       | user@ticketee.com   | P@ssw0rd  |
     And "user@ticketee.com" opens the email with subject "Confirmation instructions"
