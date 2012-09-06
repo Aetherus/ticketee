@@ -6,8 +6,8 @@ Feature: Creating tickets
   Background:
     Given there is a project called "Internet Explorer"
     And there is a following user:
-      | email             | password  | confirmation_required |
-      | user@ticketee.com | P@ssw0rd  | true                  |
+      | email             | password  |
+      | user@ticketee.com | P@ssw0rd  |
     And I am on the homepage
     When I follow "Internet Explorer"
     And follow "New Ticket"

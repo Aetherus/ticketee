@@ -5,7 +5,7 @@ Feature: Signing in
 
 Scenario: Signing in via form
   Given there is a following user:
-    | email             | password | confirmation_required  |
-    | user@ticketee.com | P@ssw0rd | true                   |
+    | email             | password |
+    | user@ticketee.com | P@ssw0rd |
   And I am signed in as it
   And I should see "Signed in as user@ticketee.com"

@@ -5,8 +5,8 @@ Feature: Deleting tickets
 
   Scenario: Deleting a ticket
     Given there is a following user:
-      | email             | password | confirmation_required |
-      | user@ticketee.com | P@ssw0rd | true                  |
+      | email             | password |
+      | user@ticketee.com | P@ssw0rd |
     And I am signed in as it
     Given there is a project called "TextMate 2"
     And "user@ticketee.com" has created a ticket for this project:

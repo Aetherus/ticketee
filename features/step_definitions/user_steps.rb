@@ -3,9 +3,11 @@ Given /^there (?:is|are)(?:| a) following users?:$/ do |table|
     # The key passed to delete() here must be a string, NOT a symbol!
     # Because the param "table" only takes string as its key.
     # Likely, the values are also strings, not FixNums or booleans or anything else.
-    confirmation_required = attributes.delete('confirmation_required') == 'true'
+    unconfirmed = (attributes.delete('unconfirmed') == 'true')
+    admin = (attributes.delete('admin') == 'true')
     @user = User.create!(attributes)
-    @user.confirm! if (confirmation_required)
+    @user.confirm! unless unconfirmed
+    @user.update_attribute(:admin, admin) if admin
   end
 end
 
