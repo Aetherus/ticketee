@@ -44,7 +44,9 @@ gem 'devise-encryptable'
 gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+#gem 'debugger'
+gem 'ruby-debug-base19x'
+gem 'ruby-debug-ide'
 
 # For testing under development environment
 group :test, :development do
