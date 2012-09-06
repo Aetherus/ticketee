@@ -4,8 +4,12 @@ Feature: Editing tickets
   I want have an interface to do that
 
   Background:
+    Given there is a following user:
+      | email             | password | confirmation_required |
+      | user@ticketee.com | P@ssw0rd | true                  |
+    And I am signed in as it
     Given there is a project called "TextMate 2"
-    And that project has a ticket:
+    And "user@ticketee.com" has created a ticket for this project:
         | title             | description                   |
         | Make it shiny!    | Gradients! Starbursts! Oh my! |
     And I am on the homepage
