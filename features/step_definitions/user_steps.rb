@@ -1,7 +1,8 @@
 Given /^there (?:is|are) the following users?:$/ do |table|
   table.hashes.each do |attributes|
     # The key passed to delete() here must be a string, NOT a symbol!
-    # Because the param "table" only takes string as its key.
+    # Because the param "table" only takes string as its key,
+    # and is just a plain Hash, not a HashWithIndifferentAccess.
     # Likely, the values are also strings, not FixNums or booleans or anything else.
     unconfirmed = (attributes.delete('unconfirmed') == 'true')
     admin = (attributes.delete('admin') == 'true')
