@@ -3,9 +3,7 @@ require 'spec_helper'
 describe ProjectsController do
   # defines a method called 'user'
   let :user do
-    user = FactoryGirl.build(:user)
-    user.confirm!
-    user
+    create_user!
   end
 
   let :project do
