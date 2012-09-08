@@ -98,6 +98,11 @@ When /^(?:I|he|she|they|"([^"]*?)") opens? the email with text \/([^"]*?)\/$/ do
   open_email(address, :with_text => Regexp.new(text))
 end
 
+When /^"([^"]*?)" confirms? this email/ do |email|
+  steps %Q{When "#{email}" opens the email with subject "Confirmation instructions"
+           And he clicks the first link in the email}
+end
+
 #
 # Inspect the Email Contents
 #

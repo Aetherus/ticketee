@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  CHECKED = '1'
+  UNCHECKED = '0'
+
   protected
   def authorize_admin!
     authenticate_user!
