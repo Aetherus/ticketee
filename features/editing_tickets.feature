@@ -4,7 +4,7 @@ Feature: Editing tickets
   I want have an interface to do that
 
   Background:
-    Given there is a following user:
+    Given there is the following user:
       | email             | password |
       | user@ticketee.com | P@ssw0rd |
     And I am signed in as it

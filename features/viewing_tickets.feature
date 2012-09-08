@@ -4,7 +4,7 @@ Feature: Viewing tickets
   I want to see them on that project's page
 
   Background:
-    Given there is a following user:
+    Given there is the following user:
       | email             | password |
       | user@ticketee.com | P@ssw0rd |
     Given there is a project called "TextMate 2"

@@ -4,7 +4,7 @@ Feature: Creating projects
   I want to create them easily
 
   Background:
-    Given there is a following user:
+    Given there is the following user:
       | email             | password  |  admin   |
       | user@ticketee.com | P@ssw0rd  |  true    |
     And I am signed in as it

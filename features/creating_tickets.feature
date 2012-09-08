@@ -5,7 +5,7 @@ Feature: Creating tickets
 
   Background:
     Given there is a project called "Internet Explorer"
-    And there is a following user:
+    And there is the following user:
       | email             | password  |
       | user@ticketee.com | P@ssw0rd  |
     And I am on the homepage

@@ -4,7 +4,7 @@ Feature: Deleting tickets
   I want a button to make them disappear
 
   Scenario: Deleting a ticket
-    Given there is a following user:
+    Given there is the following user:
       | email             | password |
       | user@ticketee.com | P@ssw0rd |
     And I am signed in as it

@@ -4,7 +4,7 @@ Feature: Editing projects
   I want to be able to do that through an interface
 
   Background:
-    Given there is a following user:
+    Given there is the following user:
       | email               | password  | admin   |
       | admin@ticketee.com  | P@ssw0rd  | true    |
     And I am signed in as it

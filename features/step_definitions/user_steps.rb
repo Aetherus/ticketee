@@ -1,4 +1,4 @@
-Given /^there (?:is|are)(?:| a) following users?:$/ do |table|
+Given /^there (?:is|are) the following users?:$/ do |table|
   table.hashes.each do |attributes|
     # The key passed to delete() here must be a string, NOT a symbol!
     # Because the param "table" only takes string as its key.
@@ -20,4 +20,9 @@ When /^I am signed in as it$/ do
       And press "Sign in"
       Then I should see "Signed in successfully."
     }
+end
+
+When /^I am signed in as "([^"]*)"$/ do |email|
+  @user = User.find_by_email(email)
+  steps "When I am signed in as it"
 end

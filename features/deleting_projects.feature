@@ -4,7 +4,7 @@ Feature: Deleting Projects
   I want to make them disappear
 
   Scenario: Deleting a project
-    Given there is a following user:
+    Given there is the following user:
       | email               | password  | admin   |
       | admin@ticketee.com  | P@ssw0rd  | true    |
     And I am signed in as it

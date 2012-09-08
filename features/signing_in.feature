@@ -4,7 +4,7 @@ Feature: Signing in
   I want a form for me to sign in again
 
 Scenario: Signing in via form
-  Given there is a following user:
+  Given there is the following user:
     | email             | password |
     | user@ticketee.com | P@ssw0rd |
   And I am signed in as it
