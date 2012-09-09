@@ -7,15 +7,18 @@ Feature: Viewing tickets
     Given there is the following user:
       | email             | password |
       | user@ticketee.com | P@ssw0rd |
+    And I am signed in as it
     Given there is a project called "TextMate 2"
+    And "user@ticketee.com" can view the "TextMate 2" project
     And "user@ticketee.com" has created a ticket for this project:
       | title           | description                     |
       | Make it shiny!  | Gradients! Starbursts! Oh my!   |
-    And there is a project called "Internet Explorer"
+    Given there is a project called "Internet Explorer"
     And "user@ticketee.com" has created a ticket for this project:
       | title                 | description   |
       | Standards compliance  | Isn't a joke. |
-    And I am on the homepage
+    And "user@ticketee.com" can view the "Internet Explorer" project
+    Given I am on the homepage
 
     Scenario: Viewing tickets for a given project
       When I follow "TextMate 2"

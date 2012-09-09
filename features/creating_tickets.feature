@@ -4,18 +4,20 @@ Feature: Creating tickets
   I want have an interface to do that
 
   Background:
-    Given there is a project called "Internet Explorer"
-    And there is the following user:
+    Given there is the following user:
       | email             | password  |
       | user@ticketee.com | P@ssw0rd  |
-    And I am on the homepage
+    And I am signed in as it
+    Given there is a project called "Internet Explorer"
+    And "user@ticketee.com" can view the "Internet Explorer" project
+    Given I am on the homepage
     When I follow "Internet Explorer"
     And follow "New Ticket"
-    Then I should see "You need to sign in or sign up before continuing."
-    When I fill in "Email" with "user@ticketee.com"
-    And fill in "Password" with "P@ssw0rd"
-    And press "Sign in"
-    Then I should see "New Ticket"
+#    Then I should see "You need to sign in or sign up before continuing."
+#    When I fill in "Email" with "user@ticketee.com"
+#    And fill in "Password" with "P@ssw0rd"
+#    And press "Sign in"
+#    Then I should see "New Ticket"
 
   Scenario: Creating a ticket
     When I fill in "Title" with "Non-standards compliance"

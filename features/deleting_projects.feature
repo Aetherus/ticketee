@@ -9,7 +9,7 @@ Feature: Deleting Projects
       | admin@ticketee.com  | P@ssw0rd  | true    |
     And I am signed in as it
     Given there is a project called "TextMate 2"
-    And I am on the homepage
+    Given I am on the homepage
     When I follow "TextMate 2"
     And follow "Delete Project"
     Then I should see "Project has been deleted."

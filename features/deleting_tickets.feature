@@ -9,10 +9,11 @@ Feature: Deleting tickets
       | user@ticketee.com | P@ssw0rd |
     And I am signed in as it
     Given there is a project called "TextMate 2"
+    And "user@ticketee.com" can view the "TextMate 2" project
     And "user@ticketee.com" has created a ticket for this project:
       | title             | description                   |
       | Make it shiny!    | Gradients! Starbursts! Oh my! |
-    And I am on the homepage
+    Given I am on the homepage
     When I follow "TextMate 2"
     And follow "Make it shiny!"
     When I follow "Delete Ticket"

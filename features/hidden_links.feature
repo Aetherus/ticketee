@@ -9,6 +9,7 @@ Feature: Hidden Links
       | user@ticketee.com   | P@ssw0rd  | false  |
       | admin@ticketee.com  | P@ssw0rd  | true   |
     And there is a project called "TextMate 2"
+    And "user@ticketee.com" can view the "TextMate 2" project
 
   #New link
   Scenario: New project link is hidden for non-signed-in users
@@ -26,10 +27,12 @@ Feature: Hidden Links
     Then I should see "New Project" link
 
   #Edit link
-  Scenario: Edit project link is hidden for non-signed-in users
-    Given I am on the homepage
-    When I follow "TextMate 2"
-    Then I should not see "Edit Project" link
+  # No longer needed because tickets are embedded to projects
+  # and to view projects, users are required to be signed in.
+#  Scenario: Edit project link is hidden for non-signed-in users
+#    Given I am on the homepage
+#    When I follow "TextMate 2"
+#    Then I should not see "Edit Project" link
 
   Scenario: Edit project link is hidden for standard users
     Given I am on the homepage
@@ -44,10 +47,12 @@ Feature: Hidden Links
     Then I should see "Edit Project" link
 
   #Delete link
-  Scenario: New project link is hidden for non-signed-in users
-    Given I am on the homepage
-    When I follow "TextMate 2"
-    Then I should not see "Delete Project" link
+  # No longer needed because tickets are embedded to projects
+  # and to view projects, users are required to be signed in.
+#  Scenario: New project link is hidden for non-signed-in users
+#    Given I am on the homepage
+#    When I follow "TextMate 2"
+#    Then I should not see "Delete Project" link
 
   Scenario: New project link is hidden for standard users
     Given I am on the homepage

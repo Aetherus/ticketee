@@ -3,8 +3,15 @@ Feature: Viewing projects
   As a user
   I want to be able to see a list of projects
 
-  Scenario: Listing all projects
+  Background:
+    Given there is the following user:
+      | email             | password  |
+      | user@ticketee.com | P@ssw0rd  |
+    And I am signed in as it
     Given there is a project called "TextMate 2"
-    And I am on the homepage
+    And "user@ticketee.com" can view the "TextMate 2" project
+
+  Scenario: Listing all projects
+    Given I am on the homepage
     When I follow "TextMate 2"
     Then I should be on the project page for "TextMate 2"
