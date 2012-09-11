@@ -9,4 +9,7 @@ class Project < ActiveRecord::Base
             :presence => true,
             :uniqueness => true
 
+  def self.for(user)
+    user.nil? ? nil : user.admin? ? Project : Project.readable_by(user)
+  end
 end
