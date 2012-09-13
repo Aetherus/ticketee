@@ -1,4 +1,4 @@
-permission_step = /^"([^"]*)" can ([^"]+?)(?:| on| in) the "([^"]*)" project$/
+permission_step = /^"([^"]*)" can ([^"]+?)(?:| on| in| from) the "([^"]*)" project$/
 
 def create_permission(user, thing, action)
   Permission.create!(user: User.find_by_email!(user),

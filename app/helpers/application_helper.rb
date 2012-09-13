@@ -7,16 +7,4 @@ module ApplicationHelper
   def admins_only(&block)
     block.call(nil) if current_user.try(:admin?)
   end
-  #
-  #def nil.all
-  #  []
-  #end
-  #
-  #def nil.where(attributes)
-  #  []
-  #end
-  #
-  #def nil.find(id)
-  #  nil
-  #end
 end

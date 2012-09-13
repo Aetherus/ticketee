@@ -3,6 +3,8 @@ class TicketsController < ApplicationController
   before_filter :find_project
   before_filter :find_ticket, :only => [:show, :edit, :update, :destroy]
   before_filter :authorize_create!, :only => [:new, :create]
+  before_filter :authorize_edit!, :only => [:edit, :update]
+  before_filter :authorize_delete!, :only => :destroy
 
   def new
     @ticket = @project.tickets.build
@@ -11,7 +13,7 @@ class TicketsController < ApplicationController
   def create
     @ticket = @project.tickets.build(params[:ticket].merge!(:user => current_user))
     if @ticket.save
-      flash[:notice] =  "Ticket has been created."
+      flash[:notice] = "Ticket has been created."
       redirect_to [@project, @ticket]
     else
       flash[:alert] = "Ticket has not been created."
@@ -67,9 +69,20 @@ class TicketsController < ApplicationController
   end
 
   def authorize_create!
-    if !current_user.admin? && cannot?(:"create tickets", @project)
-      flash[:alert] = "You cannot create tickets on this project."
-      redirect_to @project
-    end
+    authorize_action_on_project! "create tickets"
   end
+
+
+  def authorize_edit!
+    authorize_action_on_project! "edit tickets"
+  end
+
+  def authorize_delete!
+    authorize_action_on_project! "delete tickets"
+  end
+
+  def authorize_action_on_project!(action)
+    authorize_action! action, @project
+  end
+
 end
