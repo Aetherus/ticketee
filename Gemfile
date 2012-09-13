@@ -37,6 +37,9 @@ gem 'jbuilder'
 gem 'devise'
 gem 'devise-encryptable'
 
+# To check permissions
+gem 'cancan'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

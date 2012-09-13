@@ -10,6 +10,7 @@ Feature: Creating tickets
     And I am signed in as it
     Given there is a project called "Internet Explorer"
     And "user@ticketee.com" can view the "Internet Explorer" project
+    And "user@ticketee.com" can create tickets in the "Internet Explorer" project
     Given I am on the homepage
     When I follow "Internet Explorer"
     And follow "New Ticket"
