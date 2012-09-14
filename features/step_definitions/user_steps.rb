@@ -12,7 +12,7 @@ Given /^there (?:is|are) the following users?:$/ do |table|
   end
 end
 
-When /^I am signed in as it$/ do
+When /^(?:|I am )sign(?:ed)? in as it$/ do
   steps %Q{
       Given I am on the homepage
       When I follow "Sign in"
@@ -23,7 +23,7 @@ When /^I am signed in as it$/ do
     }
 end
 
-When /^I am signed in as "([^"]*)"$/ do |email|
+When /^(?:|I am )sign(?:ed)? in as "([^"]*)"$/ do |email|
   @user = User.find_by_email(email)
   steps "When I am signed in as it"
 end

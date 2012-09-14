@@ -13,11 +13,17 @@ Ticketee::Application.routes.draw do
   end
 
   namespace :admin do
-    resources :users
+    resources :users do
+      resources :permissions
+    end
     root :to => "base#index"
   end
 
   root :to => "projects#index"
+
+  put "/admin/users/:user_id/permissions/",
+      :to => 'admin/permissions#update',
+      :as => :update_user_permissions
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
