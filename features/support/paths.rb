@@ -17,6 +17,8 @@ module NavigationHelpers
       '/'
     when /^the project page (?:for|of) "([^"]*)"$/
       project_path(Project.find_by_name!($1))
+    when /^the ticket page (?:for|of) "([^"]*)" of "([^"]*)" project$/
+      project_ticket_path(Project.find_by_name($2), Ticket.find_by_title($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
