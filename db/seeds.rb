@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+sample_admin = User.create(email: 'seed@ticketee.com',
+                        password: 'P@ssw0rd')
+sample_admin.admin = true
+sample_admin.confirm!
+
+sample_project = Project.create(name: 'Ticketee Beta')
