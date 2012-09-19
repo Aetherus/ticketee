@@ -27,6 +27,9 @@ gem 'jquery-rails'
 # Pagination
 gem 'kaminari'
 
+# File upload
+gem 'paperclip'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '>= 3.0.0'
 
@@ -48,8 +51,8 @@ gem 'capistrano'
 
 # To use debugger
 #gem 'debugger'
-gem 'ruby-debug-base19x'
-gem 'ruby-debug-ide'
+gem 'ruby-debug-base19x', '~> 0.11.30.pre10'
+gem 'ruby-debug-ide19'
 
 # For testing under development environment
 group :test, :development do
