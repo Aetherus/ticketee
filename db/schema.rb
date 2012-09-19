@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919112208) do
+ActiveRecord::Schema.define(:version => 20120919132727) do
+
+  create_table "assets", :force => true do |t|
+    t.integer  "ticket_id"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "permissions", :force => true do |t|
     t.integer  "user_id"
@@ -30,15 +40,11 @@ ActiveRecord::Schema.define(:version => 20120919112208) do
 
   create_table "tickets", :force => true do |t|
     t.string   "title"
-    t.text     "description",        :limit => 255
+    t.text     "description", :limit => 255
     t.integer  "project_id"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.integer  "user_id"
-    t.string   "asset_file_name"
-    t.string   "asset_content_type"
-    t.integer  "asset_file_size"
-    t.datetime "asset_updated_at"
   end
 
   add_index "tickets", ["project_id"], :name => "index_tickets_on_project_id"
