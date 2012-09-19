@@ -19,3 +19,6 @@
 
 # Ignore IDE configuration
 /.idea
+
+# Ignore public/system
+/public/system
