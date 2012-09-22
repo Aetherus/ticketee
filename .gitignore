@@ -22,3 +22,6 @@
 
 # Ignore public/system
 /public/system
+
+# Ignore user uploaded attachment folder
+/files

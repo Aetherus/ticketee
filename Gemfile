@@ -51,7 +51,7 @@ gem 'capistrano'
 
 # To use debugger
 #gem 'debugger'
-gem 'ruby-debug-base19x', '~> 0.11.30.pre10'
+gem 'ruby-debug-base19'
 gem 'ruby-debug-ide19'
 
 # For testing under development environment

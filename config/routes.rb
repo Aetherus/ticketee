@@ -19,6 +19,8 @@ Ticketee::Application.routes.draw do
     root :to => "base#index"
   end
 
+  resources :files
+
   root :to => "projects#index"
 
   put "/admin/users/:user_id/permissions/",
