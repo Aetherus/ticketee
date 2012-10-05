@@ -66,4 +66,5 @@ group :test do
   gem 'cucumber-rails-training-wheels'
   gem 'factory_girl_rails'
   gem 'email_spec'
+  gem 'launchy'
 end
